@@ -17,7 +17,7 @@ namespace Exercise5
             {
                 SC = sc;
             }
-            
+
         }
         bool Empty()
         {
@@ -67,6 +67,7 @@ namespace Exercise5
                 }
             }
         }
+    }
         class Program
         {
             static void Main(string[] args)
@@ -108,5 +109,5 @@ namespace Exercise5
         }
 
        
-    }
+    
 }
