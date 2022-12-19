@@ -10,84 +10,90 @@ namespace Exercise5
     {
         class Node
         {
-            public int SC;
+            public string SC;
             public Node next;
-            private string sc;
 
-            public Node(int sc)
+            public Node(string sc)
             {
                 SC = sc;
             }
 
-            public Node(string sc)
+
+            bool empty()
             {
-                this.sc = sc;
+                if (Silviana == null)
+                    return (true);
+                else 
+                    return (false);
             }
-        }
-        bool empty()         
-        {
-            if (Silviana == null) 
-                return (true); else return (false);
-        }
-        Node Silviana;
-        Node Carera;
-        public void insert(string sc)
-        {
-            var newNode = new Node(sc);
-            if (Carera != null)
+            Node Silviana;
+            Node Carera;
+            public void insert(string sc)
             {
-                Carera.next = newNode;
-            }
-            Carera = newNode;
-            if (Silviana == null)
-            {
-                Silviana = newNode;
-            }
-        }
-        public void delete()
-        {
-            if (Silviana == null)
-            {
-                throw new InvalidProgramException("The queue is empty");
-            }
-            var sc = Silviana.SC;
-            Silviana = Silviana.next;
-            if (Silviana == null)
-            {
-                Silviana = null;
-            }
-        }
-        public void Display()
-        {
-            Node tmp;
-            if (empty())
-                Console.WriteLine("\nStack Empty");
-            else
-            {
-                for (tmp = Silviana; tmp != null; tmp = tmp.next)
+                var newNode = new Node(sc);
+                if (Carera != null)
                 {
-                    Console.WriteLine(tmp.SC);
+                    Carera.next = newNode;
+                }
+                Carera = newNode;
+                if (Silviana == null)
+                {
+                    Silviana = newNode;
                 }
             }
-        }
-
-    }
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            QueueLinkedList q = new QueueLinkedList();
-            char ch;
-            while (true)
+            public void delete()
             {
-                Console.WriteLine("\nSTACK MENU");
-                Console.WriteLine("1. insert");
-                Console.WriteLine("2. delete");
-                Console.WriteLine("3. display");
-                Console.WriteLine("4. exit");
-                Console.WriteLine("\nEnter your choice: ");
-                ch = Convert.ToChar(Console.ReadLine());
-                Console.WriteLine();
+                if (Silviana == null)
+                {
+                    throw new InvalidProgramException("The queue is empty");
+                }
+                var sc = Silviana.SC;
+                Silviana = Silviana.next;
+                if (Silviana == null)
+                {
+                    Silviana = null;
+                }
+            }
+            public void Display()
+            {
+                Node tmp;
+                if (empty())
+                    Console.WriteLine("\nStack Empty");
+                else
+                {
+                    for (tmp = Silviana; tmp != null; tmp = tmp.next)
+                    {
+                        Console.WriteLine(tmp.SC);
+                    }
+                }
+            }
+
+        }
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                QueueLinkedList q = new QueueLinkedList();
+                while (true)
+                {
+                    Console.WriteLine("\nSTACK MENU");
+                    Console.WriteLine("1. insert");
+                    Console.WriteLine("2. delete");
+                    Console.WriteLine("3. display");
+                    Console.WriteLine("4. exit");
+                    Console.WriteLine("\nEnter your choice: ");
+                    string input = Console.ReadLine();
+                    char ch = Convert.ToChar(input == "" ? "0" : input);
+                    switch(ch)
+                    {
+                        case '1':
+                            Console.WriteLine("\nEnter your alfabeth: ");
+                            string num = Convert.ToString(Console.ReadLine());
+                            q.insert(num);
+                            break;
+                        
+                    }
+                }
             }
         }
     }
