@@ -95,6 +95,9 @@ namespace Exercise5
                             q.delete();
                             Console.WriteLine("item deleted");
                             break;
+                        case'3':
+                            q.Display();
+                            break;
                         
                     }
                 }
