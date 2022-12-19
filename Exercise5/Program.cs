@@ -77,6 +77,18 @@ namespace Exercise5
         static void Main(string[] args)
         {
             QueueLinkedList q = new QueueLinkedList();
+            char ch;
+            while (true)
+            {
+                Console.WriteLine("\nSTACK MENU");
+                Console.WriteLine("1. insert");
+                Console.WriteLine("2. delete");
+                Console.WriteLine("3. display");
+                Console.WriteLine("4. exit");
+                Console.WriteLine("\nEnter your choice: ");
+                ch = Convert.ToChar(Console.ReadLine());
+                Console.WriteLine();
+            }
         }
     }
 }
