@@ -57,6 +57,19 @@ namespace Exercise5
                 Silviana = null;
             }
         }
+        public void Display()
+        {
+            Node tmp;
+            if (empty())
+                Console.WriteLine("\nStack Empty");
+            else
+            {
+                for (tmp = Silviana; tmp != null; tmp = tmp.next)
+                {
+                    Console.WriteLine(tmp.SC)
+                }
+            }
+        }
 
     }
     class Program
