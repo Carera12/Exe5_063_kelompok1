@@ -91,6 +91,10 @@ namespace Exercise5
                             string num = Convert.ToString(Console.ReadLine());
                             q.insert(num);
                             break;
+                        case '2':
+                            q.delete();
+                            Console.WriteLine("item deleted");
+                            break;
                         
                     }
                 }
