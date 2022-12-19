@@ -66,7 +66,7 @@ namespace Exercise5
             {
                 for (tmp = Silviana; tmp != null; tmp = tmp.next)
                 {
-                    Console.WriteLine(tmp.SC)
+                    Console.WriteLine(tmp.SC);
                 }
             }
         }
@@ -76,6 +76,7 @@ namespace Exercise5
     {
         static void Main(string[] args)
         {
+            QueueLinkedList q = new QueueLinkedList();
         }
     }
 }
