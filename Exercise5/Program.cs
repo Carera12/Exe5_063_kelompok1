@@ -12,11 +12,25 @@ namespace Exercise5
         {
             public int SC;
             public Node next;
+            private string sc;
+
             public Node(int sc)
             {
                 SC = sc;
             }
+
+            public Node(string sc)
+            {
+                this.sc = sc;
+            }
         }
+        bool empty()         
+        {
+            if (Silviana == null) 
+                return (true); else return (false);
+        }
+        Node Silviana;
+        Node Carera;
         
 
     }
