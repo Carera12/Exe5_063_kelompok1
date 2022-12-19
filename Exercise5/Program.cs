@@ -44,6 +44,19 @@ namespace Exercise5
                 Silviana = newNode;
             }
         }
+        public void delete()
+        {
+            if (Silviana == null)
+            {
+                throw new InvalidProgramException("The queue is empty");
+            }
+            var sc = Silviana.SC;
+            Silviana = Silviana.next;
+            if (Silviana == null)
+            {
+                Silviana = null;
+            }
+        }
 
     }
     class Program
