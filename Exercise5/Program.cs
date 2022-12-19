@@ -31,7 +31,19 @@ namespace Exercise5
         }
         Node Silviana;
         Node Carera;
-        
+        public void insert(string sc)
+        {
+            var newNode = new Node(sc);
+            if (Carera != null)
+            {
+                Carera.next = newNode;
+            }
+            Carera = newNode;
+            if (Silviana == null)
+            {
+                Silviana = newNode;
+            }
+        }
 
     }
     class Program
