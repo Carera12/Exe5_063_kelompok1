@@ -19,7 +19,7 @@ namespace Exercise5
             }
 
 
-            bool empty()
+            bool Empty()
             {
                 if (Silviana == null)
                     return (true);
@@ -28,7 +28,7 @@ namespace Exercise5
             }
             Node Silviana;
             Node Carera;
-            public void insert(string sc)
+            public void Insert(string sc)
             {
                 var newNode = new Node(sc);
                 if (Carera != null)
@@ -41,7 +41,7 @@ namespace Exercise5
                     Silviana = newNode;
                 }
             }
-            public void delete()
+            public void Delete()
             {
                 if (Silviana == null)
                 {
@@ -68,6 +68,10 @@ namespace Exercise5
                 }
             }
 
+            private bool empty()
+            {
+                throw new NotImplementedException();
+            }
         }
         class Program
         {
@@ -76,6 +80,7 @@ namespace Exercise5
                 QueueLinkedList q = new QueueLinkedList();
                 while (true)
                 {
+                    Console.WriteLine();
                     Console.WriteLine("\nSTACK MENU");
                     Console.WriteLine("1. insert");
                     Console.WriteLine("2. delete");
@@ -89,10 +94,10 @@ namespace Exercise5
                         case '1':
                             Console.WriteLine("\nEnter your alfabeth: ");
                             string num = Convert.ToString(Console.ReadLine());
-                            q.insert(num);
+                            q.Insert(num);
                             break;
                         case '2':
-                            q.delete();
+                            q.Delete();
                             Console.WriteLine("item deleted");
                             break;
                         case'3':
@@ -106,6 +111,21 @@ namespace Exercise5
                     }
                 }
             }
+        }
+
+        private void Display()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Insert(string num)
+        {
+            throw new NotImplementedException();
         }
     }
 }
