@@ -17,60 +17,54 @@ namespace Exercise5
             {
                 SC = sc;
             }
-
-
-            bool Empty()
+            
+        }
+        bool Empty()
+        {
+            if (Silviana == null)
+                return (true);
+            else
+                return (false);
+        }
+        Node Silviana;
+        Node Carera;
+        public void Insert(string sc)
+        {
+            var newNode = new Node(sc);
+            if (Carera != null)
             {
-                if (Silviana == null)
-                    return (true);
-                else 
-                    return (false);
+                Carera.next = newNode;
             }
-            Node Silviana;
-            Node Carera;
-            public void Insert(string sc)
+            Carera = newNode;
+            if (Silviana == null)
             {
-                var newNode = new Node(sc);
-                if (Carera != null)
-                {
-                    Carera.next = newNode;
-                }
-                Carera = newNode;
-                if (Silviana == null)
-                {
-                    Silviana = newNode;
-                }
+                Silviana = newNode;
             }
-            public void Delete()
+        }
+        public void Delete()
+        {
+            if (Silviana == null)
             {
-                if (Silviana == null)
-                {
-                    throw new InvalidProgramException("The queue is empty");
-                }
-                var sc = Silviana.SC;
-                Silviana = Silviana.next;
-                if (Silviana == null)
-                {
-                    Silviana = null;
-                }
+                throw new InvalidProgramException("The queue is empty");
             }
-            public void Display()
+            var sc = Silviana.SC;
+            Silviana = Silviana.next;
+            if (Silviana == null)
             {
-                Node tmp;
-                if (empty())
-                    Console.WriteLine("\nStack Empty");
-                else
-                {
-                    for (tmp = Silviana; tmp != null; tmp = tmp.next)
-                    {
-                        Console.WriteLine(tmp.SC);
-                    }
-                }
+                Silviana = null;
             }
-
-            private bool empty()
+        }
+        public void Display()
+        {
+            Node tmp;
+            if (Empty())
+                Console.WriteLine("\nStack Empty");
+            else
             {
-                throw new NotImplementedException();
+                for (tmp = Silviana; tmp != null; tmp = tmp.next)
+                {
+                    Console.WriteLine(tmp.SC);
+                }
             }
         }
         class Program
@@ -113,19 +107,6 @@ namespace Exercise5
             }
         }
 
-        private void Display()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Insert(string num)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
